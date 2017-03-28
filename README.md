@@ -15,6 +15,7 @@ $ pip install async_redis_queue
 
 ```python
 
+import asyncio
 from async_redis_queue import create_async_redis_queue, AsyncRedisQueue
 
 
@@ -25,6 +26,9 @@ async def test1():
 async def test2():
     q = await create_async_redis_queue('<queue-name>')
     await q.put('test')
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(test())
 
 ```
 

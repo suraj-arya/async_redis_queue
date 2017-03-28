@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import aioredis
-from zenpipeline.queues import BaseQueue
 
 
 async def create_async_redis_queue(name, **kwargs):
@@ -14,7 +13,7 @@ async def create_async_redis_queue(name, **kwargs):
     return instance
 
 
-class AsyncRedisQueue(BaseQueue):
+class AsyncRedisQueue(object):
 
     """
     Simple Queue with Redis Backend and asyncio_redis
